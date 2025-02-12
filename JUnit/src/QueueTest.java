@@ -26,7 +26,7 @@ public class QueueTest {
         queue.enq(25);
         queue.enq(105);
         queue.enq(20);
-        assertEquals(10,queue.deq());
+        assertEquals(10,queue.deq()); //Line 29
         assertEquals(25,queue.deq());
         assertEquals(105,queue.deq());
         assertEquals(20,queue.deq());
