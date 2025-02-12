@@ -43,5 +43,4 @@ Contributions are welcome! If you'd like to add new features or improve the test
 
 ---
 
-Feel free to reach out for any queries or suggestions!  
-```  
+Feel free to reach out for any queries or suggestions!
