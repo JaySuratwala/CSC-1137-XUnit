@@ -88,9 +88,9 @@ public class QueueTest {
         assertEquals(0,queue.len());
         assertTrue(queue.Empty());
     }
-//Empty    @Test
-//    public void deqNullItem(){
-//        queue.enq(null);
-//        assertNull(queue.deq());
-//    }
+Empty    @Test
+    public void deqNullItem(){
+        queue.enq(null);
+        assertNull(queue.deq());
+    }
 }
