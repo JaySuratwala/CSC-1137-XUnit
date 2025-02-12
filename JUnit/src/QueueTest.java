@@ -85,13 +85,15 @@ public class QueueTest {
         assertEquals(0,queue.len());
     }
     @Test
-    public void testCheckNull(){
+    @DisplayName("Adding null value and checking does it assert null ")
+    public void checkNull(){
         assertEquals(0,queue.len());
         queue.enq(null);
         assertNull(queue.check());
     }
     @Test
-    public void checkEmptyOnEmptyQueue(){
+    @DisplayName("Checking Empty on Empty Queue")
+    public void emptyOnEmptyQ(){
         assertEquals(0,queue.len());
         assertTrue(queue.Empty());
     }
@@ -103,7 +105,7 @@ public class QueueTest {
     }
     @Test
     @DisplayName("Enqueueing a large number of elements to test capacity limits")
-    void testEnqLarge() {
+    void enqL() {
         for (int i = 0; i < 100000; i++) {
             queue.enq(i);
         }
@@ -114,14 +116,14 @@ public class QueueTest {
     }
     @Test
     @DisplayName("Dequeueing from an empty queue to perform Error")
-    void testDeqEmptyQueue() {
+    void deqEmptyQ() {
         assertThrows(NoSuchElementException.class, () -> {
             queue.deq(); // This should throw an error when dequeuing from an empty queue
         });
     }
     @Test
     @DisplayName("Null enqueue followed by valid operations to detect Failure")
-    void testNullEnqWithValidOperations() {
+    void nullEnqValidOrp() {
         assertThrows(IllegalArgumentException.class, () -> {
             queue.enq(null); // This should fail due to the null check
         });
@@ -132,7 +134,7 @@ public class QueueTest {
     }
     @Test
     @DisplayName("Clear queue and perform operations to find Faults")
-    void testClearAndOperate() {
+    void clearAndOrp() {
         queue.enq(10);
         queue.enq(20);
         queue.clear(); // Clear the queue
@@ -143,7 +145,7 @@ public class QueueTest {
     }
     @Test
     @DisplayName("Checking the state after mixed enqueue and dequeue operations")
-    void testMixedOperations() {
+    void mixedOrp() {
         queue.enq(5);
         queue.enq(10);
         queue.deq(); // Remove 5
@@ -156,7 +158,7 @@ public class QueueTest {
     }
     @Test
     @DisplayName("Check consistency with alternate enqueue and dequeue")
-    void testAlternateEnqDeq() {
+    void alterEnqDeq() {
         queue.enq(1);
         assertEquals(1, queue.deq());
         queue.enq(2);
@@ -169,7 +171,7 @@ public class QueueTest {
     }
     @Test
     @DisplayName("Testing duplicate values in the queue")
-    void testDuplicateValues() {
+    void duplicateVal() {
         queue.enq(5);
         queue.enq(5);
         queue.enq(5);
@@ -181,7 +183,7 @@ public class QueueTest {
     }
     @Test
     @DisplayName("Testing state after multiple clears")
-    void testMultipleClears() {
+    void multipleClears() {
         queue.enq(1);
         queue.enq(2);
         queue.clear(); // First clear
@@ -191,13 +193,13 @@ public class QueueTest {
     }
     @Test
     @DisplayName("Peeking from an empty queue")
-    void testPeekEmptyQueue() {
+    void peekEmptyQ() {
         assertNull(queue.check());
         assertTrue(queue.Empty());
     }
     @Test
     @DisplayName("Mix of null and valid objects in queue")
-    void testNullAndValidMix() {
+    void nullAndValid() {
         queue.enq(null);
         queue.enq(42);
         assertNull(queue.deq()); // Null value dequeued first

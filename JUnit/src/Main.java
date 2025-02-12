@@ -3,7 +3,7 @@ public class Main {
         Queue queue = new Queue();
 
         System.out.println("===========JUnit Assignment===========");
-        System.out.println("==========Jay Suratwala-11103==========");
+        System.out.println("==========Jay Suratwala-11103=========");
         System.out.println("Queue initialized. Is it empty? " + queue.Empty());
 
         // Enqueue operations
