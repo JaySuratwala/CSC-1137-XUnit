@@ -10,7 +10,7 @@ public class QueueTest {
     @AfterEach
     void breakDown() { queue = null;}
     @Test
-    @DisplayName("Testing enqueueing without error,Failure and Faults" )
+    @DisplayName("Testing enqueueing")
     void testEnQ(){
         queue.enq(10);
         queue.enq(25);
@@ -20,7 +20,7 @@ public class QueueTest {
         assertFalse(queue.Empty());
     }
     @Test
-    @DisplayName("Testing dequeueing without error,Failure and Faults" )
+    @DisplayName("Testing dequeueing" )
     void testDeQ(){
         queue.enq(10);
         queue.enq(25);
@@ -33,7 +33,7 @@ public class QueueTest {
         assertTrue(queue.Empty());
     }
     @Test
-    @DisplayName("Testing size of queue without error,Failure and Faults" )
+    @DisplayName("Testing size of queue" )
     void testL(){
         assertEquals(0,queue.len());
         queue.enq(5);
@@ -46,7 +46,7 @@ public class QueueTest {
         assertEquals(0,queue.len());
     }
     @Test
-    @DisplayName("Testing an empty queue with Empty() and without error,Failure and Faults" )
+    @DisplayName("Testing an empty queue with Empty()")
     void testEmpty(){
         assertTrue(queue.Empty());
         queue.enq(15);
@@ -55,7 +55,7 @@ public class QueueTest {
         assertTrue(queue.Empty());
     }
     @Test
-    @DisplayName("Testing an empty queue with clear() and without error,Failure and Faults" )
+    @DisplayName("Testing an empty queue with clear()" )
     void testClear(){
         queue.enq(10);
         queue.enq(25);
@@ -67,14 +67,14 @@ public class QueueTest {
         assertTrue(queue.Empty());
     }
     @Test
-    @DisplayName("Enqueueing Null value to perform Failure" )
+    @DisplayName("Enqueueing Null value" )
     void enqNullValue(){
         queue.enq(null);
         assertFalse(queue.Empty());
 //        assertTrue(queue.Empty());// Failed test case cuz we are trying to push a null value
     }
     @Test
-    @DisplayName("Testing the size of empty queue with clear() and without error,Failure and Faults" )
+    @DisplayName("Testing the size of empty queue with clear()" )
     public void sizeCheckAfterEmpty(){
         queue.enq(10);
         queue.enq(25);
@@ -98,7 +98,7 @@ public class QueueTest {
         assertTrue(queue.Empty());
     }
     @Test
-    @DisplayName("Dequeueing null value form queue to perform Error" )
+    @DisplayName("Dequeueing null value form queue" )
     public void deqNullItem(){
         queue.enq(null);
         assertNull(queue.deq());
@@ -115,14 +115,14 @@ public class QueueTest {
         assertTrue(queue.Empty());
     }
     @Test
-    @DisplayName("Dequeueing from an empty queue to perform Error")
+    @DisplayName("Dequeueing from an empty queue")
     void deqEmptyQ() {
         assertThrows(NoSuchElementException.class, () -> {
             queue.deq(); // This should throw an error when dequeuing from an empty queue
         });
     }
     @Test
-    @DisplayName("Null enqueue followed by valid operations to detect Failure")
+    @DisplayName("Null enqueue followed by valid operations")
     void nullEnqValidOrp() {
         assertThrows(IllegalArgumentException.class, () -> {
             queue.enq(null); // This should fail due to the null check
@@ -133,7 +133,7 @@ public class QueueTest {
         assertEquals(1, queue.len());
     }
     @Test
-    @DisplayName("Clear queue and perform operations to find Faults")
+    @DisplayName("Clear queue and perform operations")
     void clearAndOrp() {
         queue.enq(10);
         queue.enq(20);
